@@ -4,6 +4,7 @@ provider "google" {
   project     = "my-project-89796-terraform"
   region      = "us-central1-a"
 }
+//Creating firewall rules
 resource "google_compute_firewall" "default" {
   name    = "demo-firewall"
   network = google_compute_network.default.name
@@ -34,7 +35,7 @@ resource "google_compute_instance" "default" {
       image = "ubuntu-1804-lts"
     }
   }
-  // Make sure flask is installed on all new instances for later steps
+  // Installing nginx 
   metadata_startup_script = "sudo apt-get -y update; sudo apt-get install -y dist-upgrade; sudo apt-get -y install nginx"
   network_interface {
     network = "default"
