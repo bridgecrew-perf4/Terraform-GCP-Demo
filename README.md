@@ -4,7 +4,7 @@ This folder contains a simple Terraform module that deploys resources in GCP fo
 
 
 # Running this module manually
-`Prequisites: locally installed terraform and SSD keys`
+Prequisites: locally installed [terraform](https://www.terraform.io/intro/getting-started/install.html) and [SSH keys](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
 1. Sign up/in for [GCP](https://cloud.google.com/).
 2. Create a new Google Cloud Project
