@@ -16,7 +16,7 @@ Prequisites: locally installed [terraform](https://www.terraform.io/intro/gettin
     mkdir terraform-gcp-instance-nginx
     cd terraform-gcp-instance-nginx
     git clone https://github.com/divergent-rose/Terraform-GCP-Demo.git
-    cd Terraform_Demo
+    cd Terraform-GCP-Demo
     ```
 6. Upload JSON file to the project directory for this demo. However, for production projects this should be stored in a secure place.   
 7. Run vim main.tf to set the project ID from the second step to the `'project'` property. 
