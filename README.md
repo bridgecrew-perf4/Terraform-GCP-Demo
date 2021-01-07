@@ -16,11 +16,11 @@ Prequisites: locally installed [terraform](https://www.terraform.io/intro/gettin
     cd Terraform-GCP-Demo
     ```
 6. Upload credentials.JSON file to the project directory for this demo. 
-```
-mv credentials.json Terraform-GCP-Demo
-```
+   ```
+   mv credentials.json Terraform-GCP-Demo
+   ```
 7. Run vim main.tf to set the project ID from the second step to the `'project'` property.  
-8.  Run terraform init.
+8. Run terraform init.
 9. Run terraform fmt.
 10. Run terraform apply.
 11. Once the instance is running, go to your GCP console and look up the Compute Enginer information for the instances IP address. 
