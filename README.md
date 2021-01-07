@@ -17,6 +17,9 @@ Prequisites: locally installed [terraform](https://www.terraform.io/intro/gettin
     cd Terraform-GCP-Demo
     ```
 6. Upload credentials.JSON file to the project directory for this demo. 
+```
+sudo mv credentials.json /TerraForm-GCP-Demo
+```
 7. Run vim main.tf to set the project ID from the second step to the `'project'` property.  
 8.  Run terraform init.
 9. Run terraform fmt.
