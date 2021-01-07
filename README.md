@@ -8,7 +8,7 @@ Prequisites: locally installed [terraform](https://www.terraform.io/intro/gettin
 
 1. Sign up/in for [GCP](https://cloud.google.com/).
 2. Create a new Google Cloud Project
-3. Create [service account key](https://console.cloud.google.com/apis/credentials/serviceaccountkey) and name it *credentials*
+3. Create [service account key](https://console.cloud.google.com/apis/credentials/serviceaccountkey) and name the downloaded JSON *credentials*
 4. Select JSON as the key type and click **Create**.  
 `Notes: If you are creating a new service account for this demo, you can use  the Project Owner, however it recommended that the service account is then removed -or restricted scope after the demo has been completed.`
 5. Create a directory for the new configuration
