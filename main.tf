@@ -6,7 +6,7 @@ provider "google" {
 }
 //Creating firewall rules
 resource "google_compute_firewall" "default" {
-  name    = "demo-firewall"
+  name    = "demo-web"
   network = google_compute_network.default.name
   allow {
     protocol = "icmp"
@@ -15,11 +15,14 @@ resource "google_compute_firewall" "default" {
     protocol = "tcp"
     ports    = ["80", "443"]
   }
-  source_tags = ["web"]
+  // Allow from any/any
+  source_ranges = ["0.0.0.0/0"]
 }
+
 resource "google_compute_network" "default" {
   name = "demo-network"
 }
+
 // Terraform plugin for creating random ids
 resource "random_id" "instance_id" {
   byte_length = 8
@@ -35,12 +38,24 @@ resource "google_compute_instance" "default" {
       image = "ubuntu-1804-lts"
     }
   }
-  // Installing nginx 
+
+  tags = ["http-server"]
+
+  // Installing nginx
   metadata_startup_script = "sudo apt-get -y update; sudo apt-get install -y dist-upgrade; sudo apt-get -y install nginx"
+
   network_interface {
-    network = "default"
+    network = "demo-network"
     access_config {
       // Include this section to give the VM an external ip address
     }
+
   }
+
 }
+
+// A variable for extracting the external IP address of the instance
+output "ip" {
+  value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
+}
+
