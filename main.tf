@@ -27,7 +27,7 @@ resource "random_id" "instance_id" {
 
 // A single Compute Engine instance
 resource "google_compute_instance" "default" {
-  name         = "ubuntuk-vm-${random_id.instance_id.hex}"
+  name         = "ubuntu-vm-${random_id.instance_id.hex}"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
   boot_disk {
